@@ -122,7 +122,6 @@ body * p{
   position: relative;
 }
 
-
 nav {
   transition: .3s;
   /*Nav scrolled*/
@@ -247,6 +246,8 @@ nav img {
 .header_text h1 {
   font-size: 62px;
   font-family: var(--header-ff);
+  color: #00000000;
+  -webkit-text-stroke: #fff 3px;
 }
 
 .header_text p {
@@ -337,12 +338,9 @@ nav .fa {
   }
 
   .enroll h2, .sub_text h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
-  
-  .sub_text h2 {
-    text-align: center;
-  }
+
 
   .footer {
     padding-bottom: 1px;
@@ -590,42 +588,40 @@ h3 {
 }
 
 
+/* Subscription box */
 .sub-box {
+  width: 80%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  flex-direction: row-reverse;
-  margin: 0 auto 50px;
-  width: auto;
-  background-position: center;
-  /*Fall back background*/
+  justify-content: center;
+  margin: 0 auto 2em;
   background: linear-gradient(to right, #343a40, #adb5bd);
+  background-size: cover;
   border-radius: 10px;
-  padding: 60px 0;
-  flex-wrap: wrap;
-  /*margin: 0 auto;*/
+  padding: 4.5em 2em;
+
 }
 
-.sub-box > .sub_text h2 {
-  color: var(--color-fff);
-  width: 500px;
-  /*text-align: justify;*/
+.sub-box > .sub_text {
+  align-self: flex-start;
+  width: 70%;
+  margin: 0 auto;
 }
 
-/*Image*/
+.sub-box > .sub_text  h2 {
+  color: #fff;
+}
+
 .sub-box > figure img {
   width: 300px;
   height: 300px;
-  /*justify-self: right;*/
-}
-.sub-box >* {
-  margin: 0 0 0 50px;
+  object-fit: cover;
+  margin-top: 1em;
 }
 
-/*Sub now button*/
-div > .sub-btn {
-  margin-top: 20px;
-   border-radius: 5px;
+.sub-box > .sub_text a[class="sub-btn"] {
+  border-radius: 1;
   display: inline-block;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -635,17 +631,27 @@ div > .sub-btn {
   background: transparent;
   position: relative;
   cursor: pointer;
+  border-radius: 6px;
   transition: 0.5s;
-  width: max-content;
+  margin: 1.5em auto;
+
 }
 
-div > .sub-btn:hover {
-  transform: translate3d(0,-10px, 0);
-   border: 2px solid var(--color-primary);
+.sub_text a[class="sub-btn"]:hover {
+  border: 2px solid var(--color-primary);
   background: var(--color-primary);
   transition: 0.5s;
+  transform: scale(1.1);
 }
 
+
+/* Media query for the sub-box on larger screens */
+@media screen and (min-width: 800px) {
+  .sub-box {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 .enroll {
   margin: 100px auto;
